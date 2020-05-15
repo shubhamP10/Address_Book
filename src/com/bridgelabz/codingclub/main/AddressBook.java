@@ -5,6 +5,7 @@
  */
 package com.bridgelabz.codingclub.main;
 import com.bridgelabz.codingclub.utils.InputUtil;
+import com.bridgelabz.codingclub.models.Helper;
 import java.io.IOException;
 
 public class AddressBook {
@@ -13,26 +14,30 @@ public class AddressBook {
 	public static void main(String[] args) throws IOException 
 	{
 		int choice; 
-//		Scanner sc = new Scanner(System.in);
+		final Helper help = new Helper();
 		while(true)
 		{
 			System.out.println("<--- Welcome to Address Book Management --->");
-			System.out.println("1. Add New Person");
-			System.out.println("2. Display Records");
-			System.out.println("3. Delete Person Record");
-			System.out.println("4. Search Person Record");
-			System.out.println("5. Edit Person Record");
-			System.out.println("6. Sort By Name");
-			System.out.println("7. Exit");
-			System.out.println("<--- Enter Your Choice --->");
+			System.out.println("\t ________________________________________");
+			System.out.println("\t | \t 1. Add New Person      \t|");
+			System.out.println("\t | \t 2. Display Records     \t|");
+			System.out.println("\t | \t 3. Delete Person Record\t|");
+			System.out.println("\t | \t 4. Search Person Record\t|");
+			System.out.println("\t | \t 5. Edit Person Record  \t|");
+			System.out.println("\t | \t 6. Sort By Name        \t|");
+			System.out.println("\t | \t 7. Exit 		\t|");
+			System.out.println("\t ----------------------------------------");
+			System.out.println("\t\t <--- Enter Your Choice --->");
 			choice = InputUtil.getIntValue();
 			switch(choice)
 			{
 				case 1 :
-						System.out.println("Welcome to Add Person Page");
+						help.addRecord();
+//						System.out.println("Welcome to Add Person Page");
 						break;
 				case 2 :
-					System.out.println("Welcome to Display Page");
+					help.displayRecord();
+//					System.out.println("Welcome to Display Page");
 					break;
 				case 3 :
 					System.out.println("Welcome to Delete Page");
