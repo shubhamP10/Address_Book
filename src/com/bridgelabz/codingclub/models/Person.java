@@ -1,12 +1,13 @@
 package com.bridgelabz.codingclub.models;
 
+import java.util.Comparator;
+
 public class Person 
 {
-	private String fname, lname, street, city, state, country, phone,zip,id;
+	private String fname, lname, street, city, state, country, phone,zip;
 	
-	public Person(String id,String fname, String lname, String street, String city, String state, String country, String phone, String zip)
+	public Person(String fname, String lname, String street, String city, String state, String country, String phone, String zip)
 	{
-		this.id = id;
 		this.fname = fname;
 		this.lname = lname;
 		this.street = street;
@@ -15,16 +16,6 @@ public class Person
 		this.country = country;
 		this.phone = phone;
 		this.zip = zip;
-	}
-	
-	public String getId()
-	{
-		return id;
-	}
-	
-	public void setId(String id)
-	{
-		this.id = id;
 	}
 	
 	public String getFname()
@@ -106,10 +97,39 @@ public class Person
 	{
 		this.zip = zip;
 	}
+	
+	// Sort By Zip Code 
+	public static Comparator<Person> zipCodeSorting = new Comparator<Person>() {
+		
+		
+		@Override
+		public int compare(Person p1, Person p2) 
+		{
+			String zip1 = p1.getZip();
+			String zip2 = p2.getZip();
+			// ascending order
+			return zip1.compareTo(zip2);
+		}
+	};
+	
+	// Sort By First Name 
+	public static Comparator<Person> firstNameSorting = new Comparator<Person>() {
+		
+		
+		@Override
+		public int compare(Person p1, Person p2) 
+		{
+			String fname1 = p1.getFname();
+			String fname2 = p2.getFname();
+			// ascending order
+			return fname2.compareTo(fname1);
+		}
+	};
+	
 	@Override
 	public String toString() {
-		return "Person [fname=" + fname + ", lname=" + lname + ", street=" + street + ", city=" + city + ", state="
-				+ state + ", country=" + country + ", phone=" + phone + ", zip=" + zip + ", id=" + id + "]";
+		return "Person [ fname=" + fname + "   lname=" + lname + "   street=" + street + "   city=" + city + "   state="
+				+ state + "   country=" + country + "   phone=" + phone + "   zip=" + zip + " ]";
 	}
 	
 }
