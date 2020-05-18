@@ -5,51 +5,54 @@
  */
 package com.bridgelabz.codingclub.main;
 import com.bridgelabz.codingclub.utils.InputUtil;
+import com.bridgelabz.codingclub.models.Helper;
 import java.io.IOException;
 
 public class AddressBook {
 
-	@SuppressWarnings("resource")
 	public static void main(String[] args) throws IOException 
 	{
-		int choice; 
-//		Scanner sc = new Scanner(System.in);
-		while(true)
+		int choice,i=0; 
+		final Helper help = new Helper();
+		while(i==0)
 		{
-			System.out.println("<--- Welcome to Address Book Management --->");
-			System.out.println("1. Add New Person");
-			System.out.println("2. Display Records");
-			System.out.println("3. Delete Person Record");
-			System.out.println("4. Search Person Record");
-			System.out.println("5. Edit Person Record");
-			System.out.println("6. Sort By Name");
-			System.out.println("7. Exit");
-			System.out.println("<--- Enter Your Choice --->");
+			System.out.println("--- Address Book Management ---\n");
+			System.out.println("\t--MENU--");
+			System.out.println("1: Add New Person      ");
+			System.out.println("2: Display Records     ");
+			System.out.println("3: Edit Person Record  ");
+			System.out.println("4: Search Person Record");
+			System.out.println("5: Delete Person Record");
+			System.out.println("6: Sort and Display        ");
+			System.out.println("7: Exit		       \n");
+//			System.out.println(" -----------------------");
+			System.out.println("--- Enter Your Choice ---");
 			choice = InputUtil.getIntValue();
 			switch(choice)
 			{
 				case 1 :
-						System.out.println("Welcome to Add Person Page");
+						help.addRecord();
 						break;
 				case 2 :
-					System.out.println("Welcome to Display Page");
-					break;
+						help.displayRecord();
+						break;
 				case 3 :
-					System.out.println("Welcome to Delete Page");
-					break;
+						help.editRecord();
+						break;
 				case 4 :
-					System.out.println("Welcome to Search Page");
-					break;
+						help.searchRecord();
+						break;
 				case 5 :
-					System.out.println("Welcome to Edit Page");
-					break;
+						help.deleteRecord();
+						break;
 				case 6 :
-					System.out.println("Welcome to Sort Page");
-					break;
+						help.sortRecord();
+						break;
 				case 7 :
-					return;
+						i=1;
+						break;
 				default :
-					System.out.println("Please Enter Valid Option!!!");
+						System.out.println("Please Enter Valid Option!!!");
 			}
 		}
 	}
