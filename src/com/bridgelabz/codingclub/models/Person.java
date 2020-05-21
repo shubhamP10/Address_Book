@@ -35,7 +35,7 @@ public class Person
 	
 	public void setLname(String lname)
 	{
-		this.fname = lname;
+		this.lname = lname;
 	}
 	
 	public String getStreet()

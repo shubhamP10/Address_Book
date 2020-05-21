@@ -14,12 +14,12 @@ public class Search
 		int flag = 0;
 		List<Person> matches = new ArrayList<Person>();
 		System.out.println("Search by...\n"
-						+ "1. First Name\n"
-						+ "2. Last Name\n"
-						+ "3. City\n"
-						+ "4. State\n"
-						+ "5. Zip Code\n"
-						+ "6. Phone Number");
+						+ "1: First Name\n"
+						+ "2: Last Name\n"
+						+ "3: City\n"
+						+ "4: State\n"
+						+ "5: Zip Code\n"
+						+ "6: Phone Number");
 		int choice = InputUtil.getIntValue();
 		switch (choice) 
 		{
@@ -32,7 +32,8 @@ public class Search
 				 {
 					 
 					 flag = 1;
-					 matches.add(p);
+					 matches.add(p); 
+//					 System.out.println(person.indexOf(p));
 				 }
 			 }
 			 if(flag == 1)
